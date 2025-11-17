@@ -1,8 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Geist } from 'next/font/google';
+
+const geist = Geist({
+  variable: '--font-geist',
+  subsets: ['latin'],
+});
+
+const plus_jakarta_sans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"]
+})
 
 const inter = Inter({
   variable: '--font-inter',
@@ -22,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${geist.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

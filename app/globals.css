@@ -4,11 +4,15 @@
   --background: #fafafa;
   --foreground: #090a0b;
 }
+@theme {
+  --font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
+  --font-inter: var(--font-inter);
+  --font-geist: var(--font-geist);
+}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-inter: var(--font-inter);
 }
 
 .dark {
@@ -19,5 +23,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
