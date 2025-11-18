@@ -8,7 +8,7 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 export const Section = ({ className, children, ...props }: SectionProps) => {
   return (
-    <section className="w-full px-6 py-6" {...props}>
+    <section className="w-full p-6" {...props}>
       <div className={cn('flex  flex-col items-start gap-4', className)}>{children}</div>
     </section>
   );

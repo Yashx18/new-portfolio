@@ -27,14 +27,41 @@ const projects = [
   },
 ];
 
+const designs = [
+  {
+    src: '/DesignImages/img6.png',
+    alt: 'img6.png',
+  },
+  {
+    src: '/DesignImages/img3.png',
+    alt: 'img3.png',
+  },
+  {
+    src: '/DesignImages/img9.png',
+    alt: 'img9.png',
+  },
+  {
+    src: '/DesignImages/img1.png',
+    alt: 'img1.png',
+  },
+  {
+    src: '/DesignImages/img8.png',
+    alt: 'img8.png',
+  },
+  {
+    src: '/DesignImages/img10.png',
+    alt: 'img10.png',
+  },
+];
+
 export const Portfolio = () => {
   return (
     <>
       <Header />
       <Contact />
+      <Skills />
       <Projects />
       <Designs />
-      <Skills />
     </>
   );
 };
@@ -72,7 +99,7 @@ const Projects = () => {
             href={item.href}
             key={index}
             target="_blank"
-            className="relative col-span-1 overflow-hidden rounded-2xl after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:text-white after:opacity-0 after:content-[''] hover:after:opacity-20 after:transition-opacity after:duration-200 hover:scale-101 transition-transform duration-200"
+            className="hover:after:content-[${item.info}] relative col-span-1 overflow-hidden rounded-2xl transition-transform duration-200 after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:text-white after:opacity-0 after:transition-opacity after:duration-200 hover:scale-101 hover:after:opacity-20"
           >
             <img src={item.src} alt={item.alt} />
           </a>
@@ -131,7 +158,7 @@ const Skills = () => {
         {skills.map((item, index) => (
           <span
             key={index}
-            className="text-bg-neutral-400 rounded-full border border-dashed border-neutral-500/30 px-2 py-1 text-xs font-semibold "
+            className="text-bg-neutral-400 rounded-full border border-dashed border-neutral-500/30 px-2 py-1 text-xs font-semibold"
           >
             {item}
           </span>
@@ -145,6 +172,21 @@ const Designs = () => {
   return (
     <Section>
       <div className="text-neutral-200">Designs</div>
+      <div className="relative h-full w-full select-none">
+        <div className="columns-1 gap-4 mask-b-from-40% mask-b-to-86% lg:columns-2">
+          {designs.map((item, index) => (
+            <div
+              key={index}
+              className="relative col-span-1 mb-4 h-full w-full break-inside-avoid overflow-hidden rounded-2xl border border-neutral-800/20 transition-transform duration-200 before:absolute before:inset-0 before:h-full before:w-full before:bg-black before:text-white before:opacity-0 before:transition-opacity before:duration-200 before:content-[''] hover:scale-101 hover:before:opacity-20"
+            >
+              <img src={item.src} alt={item.alt} className="h-full w-full" />
+            </div>
+          ))}
+        </div>
+        <button className="dark:bg-background bg-foreground ring-bg-neutral-300 absolute bottom-9 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none hover:-translate-y-[1px] hover:text-neutral-300 dark:hover:ring-neutral-500 hover:ring-bg-neutral-400 active:scale-98 dark:ring-neutral-700/40">
+          View more
+        </button>
+      </div>
     </Section>
   );
 };

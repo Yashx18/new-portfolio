@@ -33,7 +33,7 @@ export const ModeToggle = () => {
     <button
       onClick={SWITCH_THEME}
       className={cn(
-        'fixed right-6 bottom-6 flex size-10 cursor-pointer items-center justify-center rounded-lg border transition-transform duration-150 hover:scale-102 active:scale-98',
+        'fixed right-6 bottom-6 flex size-10 cursor-pointer items-center justify-center rounded-lg border transition-transform duration-150 hover:scale-101 active:scale-99',
         currentTheme === 'dark'
           ? 'border-neutral-600/80 bg-neutral-950 shadow-sm shadow-neutral-800'
           : 'border-neutral-300/80 bg-neutral-100 shadow-sm shadow-neutral-400'
