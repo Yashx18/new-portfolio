@@ -95,7 +95,7 @@ const Projects = () => {
   return (
     <Section>
       <div className="text-neutral-200">Projects</div>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
         {projects.map((item, index) => (
           <a
             href={item.href}
