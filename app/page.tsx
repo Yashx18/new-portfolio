@@ -1,13 +1,14 @@
 import { Portfolio } from '@/components/Portfolio';
 import { cn } from '@/lib/utils';
 
-
 export default function Home() {
   return (
     <div className="font-plus-jakarta-sans min-h-screen w-full">
       <main
         className={cn(
-          'relative mx-auto max-w-screen-sm pt-36 before:pointer-events-none before:fixed before:inset-x-0 before:top-0 before:z-10 before:h-24 before:w-full before:backdrop-blur-sm',
+          'relative mx-auto max-w-screen-sm pt-36 pb-12',
+          // Before Psuedo elements
+          'before:pointer-events-none before:fixed before:inset-x-0 before:top-0 before:z-10 before:h-24 before:w-full before:backdrop-blur-sm',
           // Gradients
           'before:bg-[linear-gradient(180deg,_rgba(250,250,250,0.9)_0%,_rgba(250,250,250,0.1)_100%)]',
 

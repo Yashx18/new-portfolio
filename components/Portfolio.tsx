@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { GithubIcon, XIcon, MailIcon, TelegramIcon } from './icons/Icons';
 import { Section } from './ui/Section';
 import Link from 'next/link';
@@ -94,7 +95,7 @@ const Projects = () => {
   return (
     <Section>
       <div className="text-neutral-200">Projects</div>
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {projects.map((item, index) => (
           <a
             href={item.href}
@@ -102,7 +103,14 @@ const Projects = () => {
             target="_blank"
             className="hover:after:content-[${item.info}] relative col-span-1 overflow-hidden rounded-2xl transition-transform duration-200 after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:text-white after:opacity-0 after:transition-opacity after:duration-200 hover:scale-101 hover:after:opacity-20"
           >
-            <img src={item.src} alt={item.alt} />
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="h-auto w-full"
+            />
           </a>
         ))}
       </div>
@@ -113,12 +121,12 @@ const Projects = () => {
 const Contact = () => {
   return (
     <Section>
-      <div className="flex flex-wrap items-center justify-start gap-3">
+      <div className="flex flex-wrap items-center justify-start gap-1">
         {/* GITHUB */}
         <a
           href="https://github.com/yashx18"
           target="_blank"
-          className="text-neutral-400 transition-colors duration-200 hover:text-neutral-200"
+          className="rounded-lg p-1.5 text-neutral-400 transition-colors duration-300 hover:bg-neutral-200/10 hover:text-neutral-200"
         >
           <GithubIcon className="size-5" />
         </a>
@@ -126,7 +134,7 @@ const Contact = () => {
         <a
           href="https://x.com/TheKen__"
           target="_blank"
-          className="text-neutral-400 transition-colors duration-200 hover:text-neutral-200"
+          className="rounded-lg p-1.5 text-neutral-400 transition-colors duration-300 hover:bg-neutral-200/10 hover:text-neutral-200"
         >
           <XIcon className="size-5" />
         </a>
@@ -134,15 +142,15 @@ const Contact = () => {
         <a
           href="https://t.me/kenx024"
           target="_blank"
-          className="text-neutral-400 transition-colors duration-200 hover:text-neutral-200"
+          className="rounded-lg p-1.5 text-neutral-400 transition-colors duration-300 hover:bg-neutral-200/10 hover:text-neutral-200"
         >
-          <TelegramIcon className="size-5.5" />
+          <TelegramIcon className="size-5" />
         </a>
         {/* MAIL */}
         <a
           href="mailto:yashx024@gmail.com"
           target="_blank"
-          className="text-neutral-400 transition-colors duration-200 hover:text-neutral-200"
+          className="rounded-lg p-1.5 text-neutral-400 transition-colors duration-300 hover:bg-neutral-200/10 hover:text-neutral-200"
         >
           <MailIcon className="size-5" />
         </a>
@@ -180,15 +188,22 @@ const Designs = () => {
               key={index}
               className="relative col-span-1 mb-4 h-full w-full break-inside-avoid overflow-hidden rounded-2xl border border-neutral-800/20 transition-transform duration-200 before:absolute before:inset-0 before:h-full before:w-full before:bg-black before:text-white before:opacity-0 before:transition-opacity before:duration-200 before:content-[''] hover:scale-101 hover:before:opacity-20"
             >
-              <img src={item.src} alt={item.alt} className="h-full w-full" />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-auto w-full"
+              />
             </div>
           ))}
         </div>
         <Link href="/designs">
-        <button className="dark:bg-background bg-foreground ring-bg-neutral-300 absolute bottom-9 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none  hover:text-neutral-300 dark:hover:ring-neutral-500 hover:ring-bg-neutral-400 active:scale-99 dark:ring-neutral-700/40">
-          View more
+          <button className="dark:bg-background bg-foreground ring-bg-neutral-300 hover:ring-bg-neutral-400 absolute lg:bottom-9 bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none hover:text-neutral-300 active:scale-98 dark:ring-neutral-700/40 dark:hover:ring-neutral-500 will-change-transform">
+            View more
           </button>
-          </Link>
+        </Link>
       </div>
     </Section>
   );

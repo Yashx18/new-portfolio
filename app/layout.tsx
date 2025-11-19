@@ -11,9 +11,9 @@ const geist = Geist({
 });
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"]
-})
+  variable: '--font-plus-jakarta-sans',
+  subsets: ['latin'],
+});
 
 const inter = Inter({
   variable: '--font-inter',
@@ -33,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${geist.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${plus_jakarta_sans.variable} ${geist.variable} antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
