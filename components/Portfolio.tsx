@@ -1,5 +1,6 @@
 import { GithubIcon, XIcon, MailIcon, TelegramIcon } from './icons/Icons';
 import { Section } from './ui/Section';
+import Link from 'next/link';
 
 const skills: String[] = [
   'React',
@@ -93,7 +94,7 @@ const Projects = () => {
   return (
     <Section>
       <div className="text-neutral-200">Projects</div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 ">
         {projects.map((item, index) => (
           <a
             href={item.href}
@@ -183,9 +184,11 @@ const Designs = () => {
             </div>
           ))}
         </div>
-        <button className="dark:bg-background bg-foreground ring-bg-neutral-300 absolute bottom-9 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none hover:-translate-y-[1px] hover:text-neutral-300 dark:hover:ring-neutral-500 hover:ring-bg-neutral-400 active:scale-98 dark:ring-neutral-700/40">
+        <Link href="/designs">
+        <button className="dark:bg-background bg-foreground ring-bg-neutral-300 absolute bottom-9 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none  hover:text-neutral-300 dark:hover:ring-neutral-500 hover:ring-bg-neutral-400 active:scale-99 dark:ring-neutral-700/40">
           View more
-        </button>
+          </button>
+          </Link>
       </div>
     </Section>
   );

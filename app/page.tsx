@@ -1,6 +1,7 @@
 import { Portfolio } from '@/components/Portfolio';
 import { cn } from '@/lib/utils';
 
+
 export default function Home() {
   return (
     <div className="font-plus-jakarta-sans min-h-screen w-full">
