@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 export default function Home() {
   return (
-    <div className="font-plus-jakarta-sans min-h-screen w-full">
+    <div className="font-plus-jakarta-sans min-h-screen w-full bg-white dark:bg-black">
       <main
         className={cn(
           'relative mx-auto max-w-screen-sm pt-36 pb-12',

@@ -95,7 +95,7 @@ const Projects = () => {
   return (
     <Section>
       <div className="text-neutral-200">Projects</div>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
+      <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
         {projects.map((item, index) => (
           <a
             href={item.href}
@@ -200,7 +200,7 @@ const Designs = () => {
           ))}
         </div>
         <Link href="/designs">
-          <button className="dark:bg-background bg-foreground ring-bg-neutral-300 hover:ring-bg-neutral-400 absolute lg:bottom-9 bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] transition-all duration-200 select-none hover:text-neutral-300 active:scale-98 dark:ring-neutral-700/40 dark:hover:ring-neutral-500 will-change-transform">
+          <button className="dark:bg-foreground bg-background absolute bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm text-neutral-400 ring-[1.5px] ring-neutral-300 transition-all duration-200 will-change-transform select-none hover:text-neutral-300 hover:ring-neutral-400 active:scale-98 lg:bottom-9 dark:ring-neutral-700/40 dark:hover:ring-neutral-500">
             View more
           </button>
         </Link>
