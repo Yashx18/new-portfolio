@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${plusJakarta.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
-      <body className=" antialiased">
+      <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ModeToggle />
           {children}

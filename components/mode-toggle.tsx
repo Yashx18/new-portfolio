@@ -27,26 +27,23 @@ export const ModeToggle = () => {
     setTheme('dark');
   };
 
-  const currentTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : null;
+  if (!mounted) return null;
+
+  const currentTheme = theme === 'system' ? resolvedTheme : theme;
 
   return (
     <button
       onClick={SWITCH_THEME}
       className={cn(
-        'fixed md:right-6 right-4 bottom-4 md:bottom-6 flex size-12 cursor-pointer items-center justify-center rounded-lg border transition-transform duration-150 hover:scale-101 active:scale-98 will-change-transform',
+        'fixed right-4 bottom-4 z-10 flex size-12 cursor-pointer items-center justify-center rounded-lg border transition-transform duration-150 will-change-transform hover:scale-101 active:scale-98 md:right-6 md:bottom-6',
         currentTheme === 'dark'
-          ? 'border-neutral-600/80 bg-neutral-950 shadow-sm shadow-neutral-800'
+          ? 'border-neutral-600/40 bg-foreground shadow-sm shadow-neutral-900'
           : 'border-neutral-300/80 bg-neutral-100 shadow-sm shadow-neutral-400'
       )}
     >
-      {mounted && (
-        <ModeIcon
-          className={cn(
-            'size-6',
-            currentTheme === 'dark' ? 'text-neutral-200' : 'text-neutral-800'
-          )}
-        />
-      )}
+      <ModeIcon
+        className={cn('size-6', currentTheme === 'dark' ? 'text-neutral-200' : 'text-neutral-800')}
+      />
     </button>
   );
 };

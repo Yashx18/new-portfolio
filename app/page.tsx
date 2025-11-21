@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils';
 
 export default function Home() {
   return (
-    <div className="font-plus-jakarta-sans min-h-screen w-full bg-white dark:bg-black">
+    <div className="font-plus-jakarta-sans bg-background dark:bg-foreground min-h-screen w-full">
       <main
         className={cn(
-          'relative mx-auto max-w-screen-sm pt-36 pb-12',
+          'relative mx-auto max-w-screen-sm pt-36 pb-12 select-none',
           // Before Psuedo elements
           'before:pointer-events-none before:fixed before:inset-x-0 before:top-0 before:z-10 before:h-24 before:w-full before:backdrop-blur-sm',
           // Gradients
