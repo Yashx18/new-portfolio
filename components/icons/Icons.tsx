@@ -122,24 +122,3 @@ export const LeftIcon = ({ className, ...props }: IconProps) => {
     </svg>
   );
 };
-// export const LeftIcon = ({ className, ...props }: IconProps) => {
-//   return (
-//     <svg
-//       xmlns="http://www.w3.org/2000/svg"
-//       width="24"
-//       height="24"
-//       viewBox="0 0 48 48"
-//       className={className}
-//       {...props}
-//     >
-//       <path
-//         fill="none"
-//         stroke="currentColor"
-//         strokeLinecap="round"
-//         strokeLinejoin="round"
-//         strokeWidth="4"
-//         d="M31 36L19 24L31 12"
-//       />
-//     </svg>
-//   );
-// };

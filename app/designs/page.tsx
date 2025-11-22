@@ -70,7 +70,7 @@ export default function DesignsPage() {
                 // Light mode
                 'bg-background text-neutral-500 ring-2 ring-neutral-200 hover:text-neutral-600 hover:ring-neutral-400',
                 // Shared
-                'ring-bg-neutral-300 hover:ring-bg-neutral-400 flex cursor-pointer items-center-safe gap-1 rounded-lg pl-2 pr-3 py-2 text-sm font-semibold transition-all duration-200 will-change-transform select-none active:scale-98',
+                'ring-bg-neutral-300 hover:ring-bg-neutral-400 flex cursor-pointer items-center-safe gap-1 rounded-lg py-2 pr-3 pl-2 text-sm font-semibold transition-all duration-200 will-change-transform select-none active:scale-98',
                 // Dark mode
                 'dark:bg-foreground dark:text-neutral-400 dark:ring-neutral-700/40 dark:hover:text-neutral-100 dark:hover:ring-neutral-500'
               )}
@@ -79,16 +79,24 @@ export default function DesignsPage() {
               Back
             </button>
           </Link>
-          <p className="bg-background dark:bg-foreground rounded-lg px-3 py-1 text-lg font-normal text-neutral-800 ring-2 ring-neutral-200 dark:text-neutral-400 dark:ring-neutral-700/40">
+          <p className="bg-background dark:bg-foreground rounded-lg px-4 py-1.5 text-md font-normal text-neutral-800 ring-2 ring-neutral-200 dark:text-neutral-300 dark:ring-neutral-700/40">
             Design Showcase
           </p>
         </nav>
 
-        <div className="mt-12 w-full grid grid-cols-1 gap-4">
+        <div className="mt-12 grid w-full grid-cols-1 gap-4">
           {designs.map((item, index) => (
             <div
               key={index}
-              className="border-foreground/20 dark:border-neutral-700/30 break-inside-avoid overflow-hidden rounded-xl border transition-all duration-200 will-change-transform hover:scale-101 hover:shadow-lg dark:shadow-background/5"
+              // onClick={() => setOpen(true)}
+              className={cn(
+                // Shared classes
+                'break-inside-avoid overflow-hidden rounded-xl border transition-all duration-200 will-change-transform hover:scale-101 hover:shadow-lg',
+                // Light mode classes
+                'border-foreground/20',
+                // Dark mode classes
+                'dark:shadow-background/5 dark:border-neutral-700/30'
+              )}
             >
               <Image
                 src={item.src}
@@ -96,7 +104,7 @@ export default function DesignsPage() {
                 width={0}
                 height={0}
                 sizes="100vw"
-                className="h-auto w-full"
+                className={cn('h-auto w-full')}
               />
             </div>
           ))}

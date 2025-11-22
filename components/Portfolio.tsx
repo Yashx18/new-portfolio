@@ -4,6 +4,12 @@ import { Section } from './ui/Section';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
+interface projectsProps {
+  href: string;
+  src: string;
+  alt: string;
+}
+
 const skills: String[] = [
   'React',
   'Nextjs',
@@ -15,18 +21,16 @@ const skills: String[] = [
   'Framer',
 ];
 
-const projects = [
+const projects: projectsProps[] = [
   {
-    href: 'https://cobalt-lp.vercel.app/',
+    href: 'https://cobalt-lp.vercel.app',
     src: '/images/CobaltBanner.png',
     alt: 'Cobalt Banner',
-    info: 'React + Tailwindcss',
   },
   {
-    href: 'https://finta-landing-page-one.vercel.app/',
+    href: 'https://finta-landing-page-one.vercel.app',
     src: '/images/FintaBanner.png',
     alt: 'Finta Banner',
-    info: 'React + Tailwindcss',
   },
 ];
 
@@ -119,22 +123,25 @@ const Projects = () => {
     <Section>
       <div className="font-semibold text-neutral-800 dark:text-neutral-200">Projects</div>
       <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
-        {projects.map((item, index) => (
-          <a
-            href={item.href}
+        {projects.map(({ href, src, alt }: projectsProps, index) => (
+          <Link
+            href={href}
             key={index}
             target="_blank"
-            className="hover:after:content-[${item.info}] relative col-span-1 overflow-hidden rounded-2xl transition-transform duration-200 will-change-transform after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:text-white after:opacity-0 after:transition-opacity after:duration-200 hover:scale-101 hover:after:opacity-20"
+            className={`group relative col-span-1 overflow-hidden rounded-2xl transition-transform duration-200 will-change-transform after:absolute after:inset-0 after:h-full after:w-full after:bg-black after:text-white after:opacity-0 after:transition-opacity after:duration-200 hover:scale-101 hover:after:opacity-20`}
           >
             <Image
-              src={item.src}
-              alt={item.alt}
+              src={src}
+              alt={alt}
               width={0}
               height={0}
               sizes="100vw"
               className="h-auto w-full"
             />
-          </a>
+            <p className="absolute bottom-2 left-2 z-100 translate-y-10 rounded-lg bg-neutral-100/50 px-2.5 py-1.5 text-sm font-semibold text-neutral-900 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              {href.split('//')[1]}
+            </p>
+          </Link>
         ))}
       </div>
     </Section>
@@ -146,7 +153,7 @@ const Contact = () => {
     <Section>
       <div className="flex flex-wrap items-center justify-start gap-1">
         {socialLinks.map((item, index) => (
-          <a
+          <Link
             href={item.href}
             target="_blank"
             className={cn(
@@ -158,7 +165,7 @@ const Contact = () => {
             key={index}
           >
             <item.icon className="size-5" />
-          </a>
+          </Link>
         ))}
       </div>
     </Section>
@@ -173,7 +180,7 @@ const Skills = () => {
         {skills.map((item, index) => (
           <span
             key={index}
-            className="rounded-full border border-dashed border-neutral-400/70 dark:border-neutral-500/40 px-2 py-1 text-xs font-semibold dark:text-neutral-200 text-neutral-800"
+            className="rounded-full border border-dashed border-neutral-400/70 px-2 py-1 text-xs font-semibold text-neutral-800 dark:border-neutral-500/40 dark:text-neutral-200"
           >
             {item}
           </span>
@@ -209,11 +216,11 @@ const Designs = () => {
           <button
             className={cn(
               // Light mode classes
-              "bg-background text-neutral-700 ring-[1.5px] ring-neutral-300 hover:text-neutral-600 hover:ring-neutral-400",
+              'bg-background text-neutral-700 ring-[1.5px] ring-neutral-300 hover:text-neutral-600 hover:ring-neutral-400',
               // Shared classes
-              "absolute bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all duration-200 will-change-transform select-none active:scale-98 lg:bottom-9",
+              'absolute bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all duration-200 will-change-transform select-none active:scale-98 lg:bottom-9',
               // Dark mode classes
-              "dark:bg-foreground dark:text-neutral-400 dark:ring-neutral-700/40 dark:hover:text-neutral-300 dark:hover:ring-neutral-500"
+              'dark:bg-foreground dark:text-neutral-400 dark:ring-neutral-700/40 dark:hover:text-neutral-300 dark:hover:ring-neutral-500'
             )}
           >
             View more
