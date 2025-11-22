@@ -6,7 +6,7 @@ export default function Home() {
     <div className="font-plus-jakarta-sans bg-background dark:bg-foreground min-h-screen w-full transition-colors duration-150">
       <main
         className={cn(
-          'duration-200transition-colors relative mx-auto max-w-screen-sm pt-36 pb-12 transition-colors duration-150 select-none',
+          'relative mx-auto max-w-screen-sm pt-36 pb-12 transition-colors duration-200 select-none',
           // Before Psuedo elements
           'before:pointer-events-none before:fixed before:inset-x-0 before:top-0 before:z-10 before:h-24 before:w-full before:backdrop-blur-sm',
           // Gradients
