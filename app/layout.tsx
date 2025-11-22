@@ -3,6 +3,7 @@ import { Inter, Plus_Jakarta_Sans, Geist } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import './globals.css';
 import { ModeToggle } from '@/components/mode-toggle';
+import { Analytics } from "@vercel/analytics/next"
 
 const geist = Geist({
   variable: '--font-geist',
