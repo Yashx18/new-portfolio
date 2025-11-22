@@ -48,7 +48,7 @@ const designs = [
 
 export default function DesignsPage() {
   return (
-    <div className="font-plus-jakarta-sans bg-background dark:bg-foreground min-h-screen w-full select-none">
+    <div className="font-plus-jakarta-sans bg-background dark:bg-foreground min-h-screen w-full transition-colors duration-150 select-none">
       <main
         className={cn(
           'relative mx-auto flex max-w-screen-sm flex-col gap-4 px-6 pt-14 pb-7',
@@ -64,13 +64,13 @@ export default function DesignsPage() {
         )}
       >
         <nav className="fixed top-10 z-10 flex items-center gap-3">
-          <Link href="/">
+          <Link href="/" className="fixed bottom-4 left-4 z-10 sm:static">
             <button
               className={cn(
                 // Light mode
                 'bg-background text-neutral-500 ring-2 ring-neutral-200 hover:text-neutral-600 hover:ring-neutral-400',
                 // Shared
-                'ring-bg-neutral-300 hover:ring-bg-neutral-400 flex cursor-pointer items-center-safe gap-1 rounded-lg py-2 pr-3 pl-2 text-sm font-semibold transition-all duration-200 will-change-transform select-none active:scale-98',
+                'ring-bg-neutral-300 hover:ring-bg-neutral-400 flex cursor-pointer items-center-safe gap-1 rounded-lg py-2 pr-3 pl-2 text-sm font-semibold transition-all duration-150 will-change-transform select-none active:scale-98',
                 // Dark mode
                 'dark:bg-foreground dark:text-neutral-400 dark:ring-neutral-700/40 dark:hover:text-neutral-100 dark:hover:ring-neutral-500'
               )}
@@ -79,7 +79,7 @@ export default function DesignsPage() {
               Back
             </button>
           </Link>
-          <p className="bg-background dark:bg-foreground rounded-lg px-4 py-1.5 text-md font-normal text-neutral-800 ring-2 ring-neutral-200 dark:text-neutral-300 dark:ring-neutral-700/40">
+          <p className="bg-background dark:bg-foreground text-md rounded-lg px-4 py-1.5 font-normal text-neutral-800 ring-2 ring-neutral-300 transition-colors duration-150 dark:text-neutral-300 dark:ring-neutral-800">
             Design Showcase
           </p>
         </nav>

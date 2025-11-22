@@ -218,7 +218,7 @@ const Designs = () => {
               // Light mode classes
               'bg-background text-neutral-700 ring-[1.5px] ring-neutral-300 hover:text-neutral-600 hover:ring-neutral-400',
               // Shared classes
-              'absolute bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all duration-200 will-change-transform select-none active:scale-98 lg:bottom-9',
+              'absolute bottom-22 left-1/2 -translate-x-1/2 cursor-pointer rounded-lg px-4 py-2 text-sm transition-all duration-150 will-change-transform select-none active:scale-98 lg:bottom-9',
               // Dark mode classes
               'dark:bg-foreground dark:text-neutral-400 dark:ring-neutral-700/40 dark:hover:text-neutral-300 dark:hover:ring-neutral-500'
             )}
