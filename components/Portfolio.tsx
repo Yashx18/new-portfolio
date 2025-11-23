@@ -28,7 +28,7 @@ const projects: projectsProps[] = [
     alt: 'Cobalt Banner',
   },
   {
-    href: 'https://finta-landing-page-one.vercel.app',
+    href: 'https://finta-lp.vercel.app',
     src: '/images/FintaBanner.png',
     alt: 'Finta Banner',
   },
