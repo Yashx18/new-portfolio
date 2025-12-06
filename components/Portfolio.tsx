@@ -36,7 +36,7 @@ const projects: projectsProps[] = [
 
 const socialLinks = [
   {
-    href: 'https://github.com/yashx18',
+    href: 'https://github.com/YSH-IX',
     icon: GithubIcon,
   },
   {
@@ -249,7 +249,7 @@ const More = () => {
         </Link>
         and more of my code on
         <Link
-          href={'https://github.com/yashx18'}
+          href={'https://github.com/YSH-IX'}
           target="_blank"
           className="transition-colors duration-200 hover:text-neutral-800 dark:hover:text-neutral-200"
         >
